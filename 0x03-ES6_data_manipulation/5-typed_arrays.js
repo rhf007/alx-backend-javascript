@@ -6,6 +6,6 @@ export default function createInt8TypedArray(length, position, value) {
     throw new Error('Position outside range');
   }
 
-  const newView = view.set(position, value);
-  return newView;
+  view[position] = value;
+  return view;
 }
