@@ -1,12 +1,23 @@
-/// <reference path="./crud.d.ts" />
-import { rowID, rowElement } from './interface';
-import * as CRUD from './crud';
+export const cpp: Subjects.Cpp = new Subjects.Cpp();
+export const java: Subjects.Java = new Subjects.Java();
+export const react: Subjects.React = new Subjects.React();
+export const cTeacher: Subjects.Teacher = {
+  firstName: 'Lewis',
+  lastName: 'Hamilton',
+  experienceTeachingC = 10,
+}
 
-const row: RowElement = {
-  firstName: Guillaume,
-  lastName: Salva
-};
-const newRowID: RowID = CRUD.insertRow(row);
-const updatedRow: RowElement = {...row, age: 23};
-CRUD.updateRow(newRowID, updatedRow);
-CRUD.deleteRow(newRowID);
+console.log('c++');
+cpp.setTeacher = cTeacher;
+console.log(cpp.getRequirements());
+console.log(cpp.getAvailableTeacher());
+
+console.log('Java');
+java.setTeacher = cTeacher;
+console.log(java.getRequirements());
+console.log(java.getAvailableTeacher());
+
+console.log('React');
+react.setTeacher = cTeacher;
+console.log(react.getRequirements());
+console.log(react.getAvailableTeacher());
